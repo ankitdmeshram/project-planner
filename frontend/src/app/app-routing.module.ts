@@ -8,20 +8,25 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    // component: AppComponent
+    loadChildren: () => import('./auth/auth.module').then(m=>m.AuthModule)
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'reset-password',
-    component: ResetPasswordComponent
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m=>m.AuthModule)
   }
+  // {
+  //   path: 'login',
+  //   component: LoginComponent
+  // },
+  // {
+  //   path: 'register',
+  //   component: RegisterComponent
+  // },
+  // {
+  //   path: 'reset-password',
+  //   component: ResetPasswordComponent
+  // }
 ];
 
 @NgModule({
