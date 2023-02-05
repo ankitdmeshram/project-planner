@@ -1,1 +1,27 @@
-<p>register works!</p>
+<div class="auth">
+  <div class="auth-form">
+    <!-- <button (click)="testing()">Testing</button> -->
+    <h3>Register Form</h3>
+    <form>
+      <div class="form-input">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" id="email">
+      </div>
+      <div class="form-input">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" id="password">
+      </div>
+    
+      <div class="form-input">
+        <button class="gs-btn" >Submit</button>
+      </div>
+      <div class="form-input">
+        <p class="align-center">Already Registered
+          <a routerLink="../login"> Login Now </a></p>
+        <p>
+          <a routerLink="dashboard">Dashboard</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

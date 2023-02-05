@@ -1,0 +1,56 @@
+
+.auth {
+  background: linear-gradient(to right, rgb(193, 161, 161), rgb(180, 180, 255));
+  padding: 100px 10px;
+  min-height: 100vh;
+}
+.auth-form {
+  background-color: white;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.262);
+  /* // margin/-top: 100px; */
+}
+.auth-form h3 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.auth-form .form-input
+{
+  padding: 2px;
+}
+.auth-form .form-input label {
+  width: 100%;
+  display: block;
+  font-weight: 600;
+  margin: 10px 0px 5px 0px;
+  font-size: 16px;
+  color: rgb(48, 48, 48);
+}
+.auth-form .form-input input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.176);
+  padding: 12px;
+  font-size: 16px;
+}
+.auth-form .form-input p {
+  margin-top: 2px;
+  text-align: right;
+}
+.auth-form .form-input .gs-btn {
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  padding: 12px;
+  margin-top: 30px;
+  background-color: black;
+  color: white;
+}
+.align-center {
+  text-align: center !important;
+  padding-top: 30px;
+  font-weight: 600;
+}
