@@ -13,7 +13,8 @@ import { HeaderComponent } from './auth/layouts/header/header.component';
 import { FooterComponent } from './auth/layouts/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './users/dashboard/dashboard.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,6 @@ import { DashboardComponent } from './users/dashboard/dashboard.component';
     ResetPasswordComponent,
     HeaderComponent,
     FooterComponent,
-    DashboardComponent
 
   ],
   imports: [
@@ -32,6 +32,7 @@ import { DashboardComponent } from './users/dashboard/dashboard.component';
     AppRoutingModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     // provideAuth(() => getAuth())
   ],
