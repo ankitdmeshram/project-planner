@@ -2,7 +2,7 @@
   <div class="auth-form">
     <!-- <button (click)="testing()">Testing</button> -->
     <h3>Register Form</h3>
-    <form>
+    <form [formGroup]="registerForm">
       <div class="form-input">
         <label for="email">Email</label>
         <input type="email" formControlName="email" id="email">
@@ -11,9 +11,9 @@
         <label for="password">Password</label>
         <input type="password" formControlName="password" id="password">
       </div>
-    
+
       <div class="form-input">
-        <button class="gs-btn" >Submit</button>
+        <button class="gs-btn" (click)="register()" >Submit</button>
       </div>
       <div class="form-input">
         <p class="align-center">Already Registered

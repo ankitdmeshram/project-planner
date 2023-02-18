@@ -17,8 +17,9 @@ const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-  },
+    loadChildren: () => import('./dashboard/userdashboard/userdashboard.module').then(m => m.UserDashboardModule),
+    canActivate: [AngularFireAuthGuard],
+    data: {authGuardPipe: redirectUnauthorizedLogin}  },
   {
     path: 'login',
     component: LoginComponent,

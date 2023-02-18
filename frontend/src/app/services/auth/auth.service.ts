@@ -1,52 +1,27 @@
 import { Injectable } from '@angular/core';
-
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(
+    private auth: AngularFireAuth,
+  ) { }
 
-  auth = getAuth();
-
-  signIn = () => {
-    let email = '';
-    let password = ''
-    return signInWithEmailAndPassword(this.auth, email, password)
-      .then((userCredentials) => {
-        alert("Logged In Succefully");
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Logged In Failes..")
-      })
+  signIn = (val: any) => {
+    const { email, password } = val;
+    return this.auth.signInWithEmailAndPassword(email, password);
   }
 
-  signUp = () => {
-    let email = '';
-    let password = '';
-    return createUserWithEmailAndPassword(this.auth, email, password)
-      .then((res) => {
-        alert("User Registered Succesffuly");
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Something went wrong" + error);
-      })
+  signUp = (val: any) => {
+    const { email, password } = val;
+    return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  resetPass = () => {
-    let email = '';
-    return sendPasswordResetEmail(this.auth, email)
-      .then((res) => {
-        console.log(res);
-        alert("Code Sent");
-      })
-      .catch((err) => {
-        alert("Something went wrong");
-      })
+  resetPass = (val:any) => {
+    const { email} = val;
+    return this.auth.sendPasswordResetEmail(email);
   }
 }

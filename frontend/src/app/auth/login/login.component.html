@@ -2,7 +2,7 @@
   <div class="auth-form">
     <!-- <button (click)="testing()">Testing</button> -->
     <h3>Login Form</h3>
-    <form>
+    <form [formGroup]="loginForm">
       <div class="form-input">
         <label for="email">Email</label>
         <input type="email" formControlName="email" id="email">
@@ -15,7 +15,7 @@
         <p> <a routerLink="../reset-password"> Forget Password ?</a></p>
       </div>
       <div class="form-input">
-        <button class="gs-btn" >Submit</button>
+        <button class="gs-btn" (click)="signIn()" >Submit</button>
       </div>
       <div class="form-input">
         <p class="align-center">Not A Member?
