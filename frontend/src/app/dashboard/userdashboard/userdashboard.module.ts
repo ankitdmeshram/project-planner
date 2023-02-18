@@ -6,6 +6,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { UsersComponent } from './users/users.component';
 import { FeedsComponent } from './feeds/feeds.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { CommonModule } from '@angular/common';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +18,13 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     UsersComponent,
     FeedsComponent,
     ProjectDetailsComponent,
+    HeaderComponent,
+    SidebarComponent,
 
   ],
   imports: [
-    UserDashboardRoutingModule
+    UserDashboardRoutingModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [UserdashboardComponent]

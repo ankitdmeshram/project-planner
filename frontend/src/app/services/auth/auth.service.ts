@@ -24,4 +24,9 @@ export class AuthService {
     const { email} = val;
     return this.auth.sendPasswordResetEmail(email);
   }
+
+  getUser = () => {
+    return this.auth.currentUser
+  }   
+
 }

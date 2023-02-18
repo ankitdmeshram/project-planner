@@ -1,0 +1,88 @@
+.dashboard {
+  background-color: #f7f6f9;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.dashboard .gs-sidebar {
+  background-color: white;
+  height: 100%;
+  width: 20%;
+}
+
+.dashboard .gs-body {
+  /* background-color: green; */
+  width: 80%;
+  height: 100%;
+}
+
+.gs-header header {
+  background-color: white;
+  display: flex;
+}
+.gs-header p {
+  font-size: 18px;
+  padding: 20px;
+}
+.gs-profile-img {
+  width: 40px;
+  background-color: grey;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.gs-profile-setting {
+  width: 200px;
+  background-color: white;
+  position: absolute;
+  right: 2px;
+  top: 60px;
+  box-shadow: 1px 1px 10px grey;
+}
+.gs-profile-setting ul
+{
+  list-style: none;
+  cursor: pointer;
+}
+.gs-profile-setting ul li
+{
+  border-bottom: 1px solid grey;
+  padding: 10px 20px;
+}
+.gs-profile-setting ul li:hover
+{
+  background-color: rgba(234, 234, 234, 0.481);
+}
+
+.gs-sidebar-menu {
+  padding-top: 10px;
+  width: 100%;
+}
+
+
+.gs-sidebar-menu ul  {
+  box-shadow: -1px 0.4px 1px grey;
+}
+.gs-sidebar-menu ul li {
+  list-style: none;
+  padding: 18px;
+
+}
+
+.gs-sidebar-menu ul li:hover {
+  background: rgb(220, 220, 220);
+}
+.gs-sidebar-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+
+}
+
+.gs-sidebar-menu ul li a span {
+    padding: 0px 20px;
+}
