@@ -1,10 +1,8 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-@import url("~ngx-toastr/toastr");
-/* @import 'ngx-toastr/toastr-bs4-alert'; */
+@import 'ngx-toastr/toastr';
 
-/* @import url("~ngx-spinner/animations/ball-scale-multiple.css"); */
 
 
 * {
