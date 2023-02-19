@@ -25,6 +25,18 @@
   font-size: 18px;
   padding: 20px;
 }
+.gs-sign-out-btn
+{
+  position: absolute;
+  right: 00px;
+  padding: 21px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.gs-sign-out-btn:hover
+{
+  background-color: rgba(128, 128, 128, 0.103);
+}
 .gs-profile-img {
   width: 40px;
   background-color: grey;
@@ -35,6 +47,7 @@
   border-radius: 50px;
   cursor: pointer;
 }
+
 .gs-profile-setting {
   width: 200px;
   background-color: white;
