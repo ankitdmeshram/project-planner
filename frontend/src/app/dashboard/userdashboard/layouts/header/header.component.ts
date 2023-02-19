@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +11,20 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   userName: string = ''
   constructor(
+    private auth: AuthService,
+    private toastr: ToastrService,
+    private router: Router
   ) {
   }
 
   showProfileSet:boolean = false;
 
-
+  signOut = () => {
+    this.auth.signOut()
+    .then(() => {
+      this.toastr.success("Sign Out Succesfully");
+      this.router.navigate(['../'])
+    })
+  }
 
 }
