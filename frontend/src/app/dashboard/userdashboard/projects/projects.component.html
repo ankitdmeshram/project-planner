@@ -1,45 +1,42 @@
 <div class="project-lists">
-
   <div class="gs-btn-right">
-    <button (click)="showAddProjectForm=!showAddProjectForm">Add New Project</button>
+    <button (click)="showAddProjectForm = !showAddProjectForm">
+      Add New Project
+    </button>
   </div>
 
-  <table class="gs-table">
-    <tr>
-      <th>Id</th>
-      <th>Project Name</th>
-      <th>Owner</th>
-      <th>Status</th>
-      <th>Total No. Of Tasks</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Created At</th>
-      <th>Updated At</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td routerLink="../project/1">Project Name</td>
-      <td>Owner</td>
-      <td>Status</td>
-      <td>Total No. Of Tasks</td>
-      <td>Start Date</td>
-      <td>End Date</td>
-      <td>Created At</td>
-      <td>Updated At</td>
-    </tr>
-  </table>
+  <div style="overflow-x: scroll">
+    <table class="gs-table">
+      <tr>
+        <th>Id</th>
+        <th>Project Name</th>
+        <th>Owner</th>
+        <th>Status</th>
+        <th>Total No. Of Tasks</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td routerLink="../project/1">Project Name</td>
+        <td>Owner</td>
+        <td>Status</td>
+        <td>Total No. Of Tasks</td>
+        <td>Start Date</td>
+        <td>End Date</td>
+        <td>Created At</td>
+        <td>Updated At</td>
+      </tr>
+    </table>
+  </div>
 
-
-  <div  [className]="showAddProjectForm ? 'gs-pro-form' : 'display-none' ">
+  <div [className]="showAddProjectForm ? 'gs-pro-form' : 'display-none'">
     <h1>Project Form Content Will Goes here</h1>
 
     <div class="gs-btn-right">
-      <button (click)="showAddProjectForm=false">Cancel</button>
-
+      <button (click)="showAddProjectForm = false">Cancel</button>
     </div>
-
   </div>
-
-
-
 </div>

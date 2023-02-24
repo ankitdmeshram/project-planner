@@ -3,6 +3,7 @@
   <div class="gs-btn-right">
     <button (click)="showAddProjectForm=!showAddProjectForm">Add New Task</button>
   </div>
+  <div style="overflow-x: scroll">
 
   <table class="gs-table">
     <tr>
@@ -28,7 +29,7 @@
       <td>Updated At</td>
     </tr>
   </table>
-
+</div>
 
   <div  [className]="showAddProjectForm ? 'gs-pro-form' : 'display-none' ">
     <h1>Project Form Content Will Goes here</h1>
