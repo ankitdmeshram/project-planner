@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ProjectDetailsComponent {
 
+  showAddProjectForm:boolean = false;
+
+
 }
