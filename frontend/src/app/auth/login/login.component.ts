@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
@@ -14,7 +15,8 @@ export class LoginComponent {
   constructor(
     private auth: AuthService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService
   ) {
 
   }
@@ -25,13 +27,16 @@ export class LoginComponent {
   })
 
   signIn = () => {
+    this.spinner.show()
     this.auth.signIn(this.loginForm.value)
     .then(() => {
       this.toastr.success("Logged In Successfull");
       this.router.navigate(['/dashboard'])
+      this.spinner.hide()
     })
     .catch(() => {
       this.toastr.warning("Logged In Failed")
+      this.spinner.hide()
     })
   }
 
