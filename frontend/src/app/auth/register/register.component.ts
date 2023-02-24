@@ -24,12 +24,6 @@ export class RegisterComponent {
 
   register = () => {
     this.auth.signUp(this.registerForm.value)
-    .then(() => {
-      this.toastr.success("Registered Successfull");
-      this.router.navigate(['/dashboard'])
-    })
-    .catch(() => {
-      this.toastr.warning("Registered Failed")
-    })
+    
   }
 }

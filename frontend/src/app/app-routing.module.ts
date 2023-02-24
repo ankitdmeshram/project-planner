@@ -43,7 +43,6 @@ const routes: Routes = [
     loadChildren: () => import('./dashboard/userdashboard/userdashboard.module').then(m => m.UserDashboardModule),
     canActivate: [AngularFireAuthGuard],
     data: {authGuardPipe: redirectUnauthorizedLogin}
-
   }
 ];
 
