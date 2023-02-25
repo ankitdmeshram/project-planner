@@ -34,6 +34,32 @@
 
   <div [className]="showAddProjectForm ? 'gs-pro-form' : 'display-none'">
     <h1>Project Form Content Will Goes here</h1>
+    <br>
+
+
+<div class="container">
+
+  <form action="">
+    <div class="from_group">
+      <label for="project"> Project</label><br>
+      <input type="tecxt" name="project" class="form-control">
+    </div><br><br>
+
+    <div class="from_group">
+      <label for="bug_title"> Bug Title</label><br>
+      <input type="text" name="bug_title" class="form-control">
+    </div><br><br>
+
+    <div class="from_group">
+      <label for="description"> Description</label><br>
+      <input type="textarea" name="description" class="form-control">
+    </div><br><br>
+    <angular-editor formControlName="htmlContent" [config]="editorConfig"></angular-editor>
+
+
+  </form>
+</div>
+
 
     <div class="gs-btn-right">
       <button (click)="showAddProjectForm = false">Cancel</button>

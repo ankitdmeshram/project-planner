@@ -9,6 +9,8 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { HeaderComponent } from './layouts/header/header.component';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
+import { HttpClientModule} from '@angular/common/http';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
   ],
   imports: [
     UserDashboardRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    AngularEditorModule
   ],
   providers: [],
   bootstrap: [UserdashboardComponent]
