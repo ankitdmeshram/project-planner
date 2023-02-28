@@ -10,61 +10,46 @@ export class ProjectService {
     private http: HttpClient
   ) { }
 
-  url:string = ""
+  url:string = "https://project-planner-backend.ankitmeshram.in/api"
 
-  createProject = () => {
-    return this.http.post(this.url, '').subscribe(( ) => {
+  createProject = (data:any) => {
+    console.log(data)
 
-    })
+    return this.http.post(`${this.url}/project/create_project`, data)
   }
 
-  Project = () => {
-    return this.http.post(this.url, '')
-    .subscribe((res) => {
-
-    })
+  Project = (data:any) => {
+    data = {
+      email: data.email
+    }
+    return this.http.post(`${this.url}/projects`, data)
   }
 
-  updateProject = () => {
-    return this.http.post(this.url, '')
-    .subscribe((res) => {
-
-    })
+  updateProject = (data:any) => {
+    return this.http.post(`${this.url}/project/update_project`, data)
   }
 
-  deleteProject = () => {
-    return this.http.post(this.url, '')
-    .subscribe((res) => {
-
-    })
+  deleteProject = (data:any) => {
+    data = {
+      id: data.id
+    }
+    return this.http.post(`${this.url}/project/delete_project`, data)
   }
 
-
-  createTask = () => {
-    return this.http.post(this.url, '')
-    .subscribe((res) => {
-
-    })
+  createTask = (data:any) => {
+    return this.http.post(`${this.url}/projects_details/create_task`, data)
   }
 
-  projectTask = () => {
-    return this.http.post(this.url, '')
-    .subscribe((res) => {
-
-    })
+  projectTask = (data:any) => {
+    return this.http.post(`${this.url}/projects_details`, data)
   }
 
-  updateTask = ()  => {
-    return this.http.post(this.url, '')
-    .subscribe((res) => {
-      
-    })
+  updateTask = (data: any)  => {
+    return this.http.post(`${this.url}/projects_details/update_task`, data)
   }
-  deleteTask = () => {
-    return this.http.post(this.url, '')
-    .subscribe((res) => {
-
-    })
+  
+  deleteTask = (data: any) => {
+    return this.http.post(`${this.url}/projects_details/delete_task`, data)
   }
 
 }

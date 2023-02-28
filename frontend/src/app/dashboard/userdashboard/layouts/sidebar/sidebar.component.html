@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <h2 class="text-center">Project Planner</h2>
+  <h2 class="text-center" style="color: orange">Project Planner</h2>
 
   <div class="gs-sidebar-menu">
     <ul>
@@ -9,12 +9,24 @@
       <li routerLink="./projects">
         <a> <span> => </span> Projects</a>
       </li>
-      <li routerLink="./">
+      <!-- <li routerLink="./">
         <a> <span> => </span>   Users</a>
       </li>
       <li routerLink="./">
         <a> <span> => </span>   Feeds</a>
+      </li> -->
+
+      <li *ngIf="projects.length > 0" style="background: rgb(72, 72, 72)">
+        <a>Projects</a>
       </li>
+
+      <li *ngFor="let project of projects" routerLink="../project/{{project.id}}">
+        <a> 
+          <span> => </span> {{project.project_name}}
+        </a>
+
+      </li>
+
     </ul>
   </div>
 </div>

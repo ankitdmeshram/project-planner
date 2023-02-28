@@ -6,9 +6,11 @@
 }
 
 .dashboard .gs-sidebar {
-  background-color: white;
+  background-color:black;
   height: 100%;
   width: 20%;
+  color: white;
+  overflow-y: scroll;
 }
 
 .dashboard .gs-body {
@@ -68,7 +70,7 @@
 }
 .gs-profile-setting ul li:hover
 {
-  background-color: rgba(234, 234, 234, 0.481);
+  background-color: #315d9e;
 }
 
 .gs-sidebar-menu {
@@ -78,7 +80,7 @@
 
 
 .gs-sidebar-menu ul  {
-  box-shadow: -1px 0.4px 1px grey;
+  box-shadow: -1px 0.4px 1px white;
 }
 .gs-sidebar-menu ul li {
   list-style: none;
@@ -87,12 +89,12 @@
 }
 
 .gs-sidebar-menu ul li:hover {
-  background: rgb(220, 220, 220);
+  background: #0066ff;
 }
 .gs-sidebar-menu ul li a {
   text-decoration: none;
   font-size: 18px;
-  color: black;
+  color: white;
 
 }
 
@@ -156,5 +158,6 @@
   transition: 5s;
   box-shadow: 1px 1px 10px grey;
   padding: 10px;
+  overflow: scroll;
 }
 

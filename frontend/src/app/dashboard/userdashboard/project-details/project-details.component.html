@@ -5,34 +5,107 @@
   </div>
   <div style="overflow-x: scroll">
 
-  <table class="gs-table">
-    <tr>
-      <th>Id</th>
-      <th>Tasks Name</th>
-      <th>Owner</th>
-      <th>Status</th>
-      <th>Total No. Of Tasks</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Created At</th>
-      <th>Updated At</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Project Name</td>
-      <td>Owner</td>
-      <td>Status</td>
-      <td>Total No. Of Tasks</td>
-      <td>Start Date</td>
-      <td>End Date</td>
-      <td>Created At</td>
-      <td>Updated At</td>
-    </tr>
-  </table>
-</div>
+    <table class="gs-table">
+      <tr>
+        <th>Id</th>
+        <th>Tasks Name</th>
+        <th>Created By</th>
+        <th>Status</th>
+        <th>Assigned By</th>
+        <th>Assigned To</th>
+        <th>Due Date</th>
+        <th>Priority</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Update / Delete</th>
+      </tr>
+      <tr *ngFor="let project of projectstask; index as i">
+        <td>{{project.id}}</td>
+        <td>{{project.title}}</td>
+        <td>{{project.created_by}}</td>
+        <td>{{project.status}}</td>
+        <td>{{project.assigned_by}}</td>
+        <td>{{project.assigned_to}}</td>
+        <td>{{project.due_date}}</td>
+        <td>{{project.priority}}</td>
+        <td>{{project.created_at}}</td>
+        <td>{{project.updated_at}}</td>
+        <td><span (click)="updateTask(project)">View </span> / <span
+            (click)="deleteTask(project.id, i)">Delete</span></td>
+      </tr>
+    </table>
+  </div>
 
-  <div  [className]="showAddProjectForm ? 'gs-pro-form' : 'display-none' ">
+  <div [className]="showAddProjectForm ? 'gs-pro-form' : 'display-none' ">
     <h1>Project Form Content Will Goes here</h1>
+
+    <div class="container">
+
+      <form [formGroup]="addTaskForm">
+        <div class="from_group">
+          <label for="title"> Title</label><br>
+          <input type="text" formControlName="title" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="description"> Description</label><br>
+          <angular-editor formControlName="description" [config]="editorConfig"></angular-editor>
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="created">Created By</label><br>
+          <input type="text" formControlName="created_by" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="assignedBy"> Assigned By</label><br>
+          <input type="text" formControlName="assigned_by" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="assignedTo"> Assigned To</label><br>
+          <input type="text" formControlName="assigned_to" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="tags">Tags</label><br>
+          <input type="text" formControlName="tags" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="dueDate">Due Date</label><br>
+          <input type="date" formControlName="due_date" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="status"> Status</label><br>
+          <input type="text" formControlName="status" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="priority"> Priority</label><br>
+          <input type="text" formControlName="priority" class="form-control">
+        </div><br><br>
+
+
+        <div class="from_group">
+          <label for="comments"> Comments</label><br>
+          <input type="text" formControlName="comments" class="form-control">
+        </div><br><br>
+
+
+        <div class="gs-btn-right" *ngIf="this.isUpdateForm">
+          <button (click)="updateTaskForm()">Update</button>
+        </div>
+
+        <div class="gs-btn-right" *ngIf="!this.isUpdateForm">
+          <button (click)="addTask()">Submit</button>
+        </div>
+
+
+
+      </form>
+    </div>
 
     <div class="gs-btn-right">
       <button (click)="showAddProjectForm=false">Cancel</button>

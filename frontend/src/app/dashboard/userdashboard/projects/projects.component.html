@@ -1,6 +1,6 @@
 <div class="project-lists">
   <div class="gs-btn-right">
-    <button (click)="showAddProjectForm = !showAddProjectForm">
+    <button (click)="showAddProjectForm= !showAddProjectForm">
       Add New Project
     </button>
   </div>
@@ -17,17 +17,19 @@
         <th>End Date</th>
         <th>Created At</th>
         <th>Updated At</th>
+        <th>View / Delete</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td routerLink="../project/1">Project Name</td>
-        <td>Owner</td>
-        <td>Status</td>
+      <tr *ngFor="let project of projects; index as i">
+        <td>{{project.id}}</td>
+        <td routerLink="../project/{{project.id}}">{{project.project_name}}</td>
+        <td> {{project.owner}}</td>
+        <td>{{project.status}}</td>
         <td>Total No. Of Tasks</td>
-        <td>Start Date</td>
-        <td>End Date</td>
-        <td>Created At</td>
-        <td>Updated At</td>
+        <td>{{project.start_date}}</td>
+        <td>{{project.end_date}}</td>
+        <td>{{project.created_at}}</td>
+        <td>{{project.updated_at}}</td>
+        <td><span (click)="updateProject(project)">View  </span> / <span (click)="deleteProject(project.id, i)">Delete</span></td>
       </tr>
     </table>
   </div>
@@ -37,32 +39,63 @@
     <br>
 
 
-<div class="container">
+    <div class="container">
 
-  <form action="">
-    <div class="from_group">
-      <label for="project"> Project</label><br>
-      <input type="tecxt" name="project" class="form-control">
-    </div><br><br>
+      <form [formGroup]="projectForm">
+        <div class="from_group">
+          <label for="project"> Project</label><br>
+          <input type="text" formControlName="project_name"
+            class="form-control" >
+        </div><br><br>
 
-    <div class="from_group">
-      <label for="bug_title"> Bug Title</label><br>
-      <input type="text" name="bug_title" class="form-control">
-    </div><br><br>
+        <div class="from_group">
+          <label for=" Owner"> Owner</label><br>
+          <input type="text" formControlName="owner" class="form-control">
+        </div><br><br>
 
-    <div class="from_group">
-      <label for="description"> Description</label><br>
-      <input type="textarea" name="description" class="form-control">
-    </div><br><br>
-    <angular-editor formControlName="htmlContent" [config]="editorConfig"></angular-editor>
+        <div class="from_group">
+          <label for="Status"> Status</label><br>
+          <select formControlName="status" class="form-control">
+            <option>Open</option>
+            <option>In Progress</option>
+            <option>Completed</option>
+          </select>
+        </div><br><br>
 
+        <div class="from_group">
+          <label for="startDate"> Start Date</label><br>
+          <input type="date" formControlName="start_date" class="form-control">
+        </div><br><br>
 
-  </form>
-</div>
+        <div class="from_group">
+          <label for="endDate"> End Date</label><br>
+          <input type="date" formControlName="end_date" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="teamMember"> Team Member</label><br>
+          <input type="text" formControlName="team_member" class="form-control">
+        </div><br><br>
+
+        <div class="from_group">
+          <label for="description"> Description</label><br>
+        </div>
+        <angular-editor formControlName="description" [config]="editorConfig"></angular-editor>
+
+        <div class="gs-btn-right" *ngIf="this.isUpdateForm">
+          <button (click)="updateProjectForm()">Update</button>
+        </div>
+
+        <div class="gs-btn-right" *ngIf="!this.isUpdateForm">
+          <button (click)="createProject()">Submit</button>
+        </div>
+
+      </form>
+    </div>
 
 
     <div class="gs-btn-right">
-      <button (click)="showAddProjectForm = false">Cancel</button>
+      <button (click)="showAddProjectForm= false">Cancel</button>
     </div>
   </div>
 </div>

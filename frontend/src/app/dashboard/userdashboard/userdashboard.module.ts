@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { HttpClientModule} from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     UserDashboardRoutingModule,
     CommonModule,
     HttpClientModule,
-    AngularEditorModule
+    AngularEditorModule,
+    ReactiveFormsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [UserdashboardComponent]

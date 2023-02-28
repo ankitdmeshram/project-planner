@@ -15,7 +15,12 @@ export class HeaderComponent {
     private toastr: ToastrService,
     private router: Router
   ) {
+    this.auth.getUser().then((res:any) => {
+      this.userEmail = res.email;
+    })
   }
+
+  userEmail: string=""
 
   showProfileSet:boolean = false;
 

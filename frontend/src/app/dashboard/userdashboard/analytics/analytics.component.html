@@ -1,1 +1,25 @@
-<p>analytics works!</p>
+
+<div class="flex-container">
+    <div>
+        <h5 style="padding-top: 25px;"> Projects</h5>
+    </div>
+    <div>
+        <h2>{{projects.length}}</h2>
+        <h5>Total Projects</h5>
+    </div>
+    <div>
+        <h2>{{openProjectCount}}</h2>
+        <h5>Open Projects</h5>
+    </div>
+    <div>
+        <h2>{{closeProjectCount}}</h2>
+        <h5>Completed Projects</h5>
+    </div>
+   
+  </div>
+  
+  <canvas baseChart
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [type]="'bar'">
+</canvas>
